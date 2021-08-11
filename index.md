@@ -42,18 +42,6 @@ For a workshop please delete the following block until the next dashed-line
 {% endcomment %}
 {% assign info = site.data.data[0] %}
 
-<div class="alert alert-danger">
-This is the workshop template. Delete these lines and use it to
-<a href="https://carpentries.github.io/workshop-template/customization/index.html">customize</a>
-your own website. If you are running a self-organized workshop or have not put
-in a workshop request yet, please also fill in
-<a href="{{site.amy_site}}/forms/self-organised/">this workshop request form</a>
-to let us know about your workshop and our administrator may contact you if we
-need any extra information.
-If this is a pilot workshop for a new lesson,
-remember to uncomment the `pilot_lesson_site` field in `_config.yml`
-</div>
-
 {% comment %}
 8< ============================= until here ==================
 {% endcomment %}
@@ -139,6 +127,8 @@ the pitch.
 {% include dc/intro.html %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/intro.html %}
+{% elsif info.carpentry == "ds" %}
+{% include ds/intro.md %}
 {% endif %}
 
 {% comment %}
@@ -153,6 +143,8 @@ workshop is only open to people from a particular institution.
 {% include dc/who.html %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/who.html %}
+{% elsif info.carpentry == "ds" %}
+{% include ds/who.md %}
 {% endif %}
 
 {% comment %}
@@ -385,6 +377,8 @@ of code below the Schedule `<h2>` header below with
 {% include dc/schedule.html %}
 {% elsif info.carpentry == "lc" %}
 {% include lc/schedule.html %}
+{% elsif info.carpentry == "ds" %}
+{% include ds/schedule.html %}
 {% elsif info.carpentry == "pilot" %}
 The lesson taught in this workshop is being piloted and a precise schedule is yet to be established. The workshop will include regular breaks. If you would like to know the timing of these breaks in advance, please [contact the workshop organisers](#contact). For a list of lesson sections and estimated timings, [visit the lesson homepage]({{ site.lesson_site }}).
 {% comment %}
@@ -456,6 +450,8 @@ during the workshop.
 {% elsif info.carpentry == "lc" %}
 {% include lc/setup.html %}
 {% elsif info.carpentry == "pilot" %}
+{% elsif info.carpentry == "ds" %}
+{% include ds/setup.md %}
 Please check the "Setup" page of
 [the lesson site]({{ site.lesson_site }}) for instructions to follow
 to obtain the software and data you will need to follow the lesson.
