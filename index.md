@@ -387,9 +387,12 @@ See the contents of the _includes/custom-schedule.html file for an example of
 how one of these schedule tables is constructed.
 {% endcomment %}
 {% endif %}
-
 <hr/>
 
+<h2 id="syllabus">Syllabus</h2>
+{% if info.carpentry == "ds" %}
+{% include ds/syllabus.md %}
+{% endif %}
 
 {% comment %}
 SETUP
